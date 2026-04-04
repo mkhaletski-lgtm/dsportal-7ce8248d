@@ -1,5 +1,6 @@
 import FloatingShapes from "@/components/FloatingShapes";
 import HeroSection from "@/components/HeroSection";
+import AboutSection from "@/components/AboutSection";
 import SinglesSection from "@/components/SinglesSection";
 import Footer from "@/components/Footer";
 
@@ -9,6 +10,7 @@ const Index = () => {
       <FloatingShapes />
       <main className="relative z-10">
         <HeroSection />
+        <AboutSection />
         <SinglesSection />
         <Footer />
       </main>
