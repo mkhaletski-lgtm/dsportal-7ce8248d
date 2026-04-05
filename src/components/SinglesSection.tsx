@@ -30,7 +30,9 @@ const SingleCard = ({ single, index }: { single: Single; index: number }) => {
         style={{
           boxShadow:
             "0 0 30px hsla(185,100%,50%,0.15), 0 0 60px hsla(325,90%,55%,0.08)",
+          perspective: 800,
         }}
+        whileHover={{ rotateY: 8, rotateX: -4, scale: 1.03 }}
       >
         <img
           src={single.cover}
