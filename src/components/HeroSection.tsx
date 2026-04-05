@@ -1,16 +1,25 @@
 import { motion } from "framer-motion";
+import heroBg from "@/assets/hero-bg.png";
 
 const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
-      {/* Radial glow */}
-      <div
-        className="absolute inset-0 z-0"
-        style={{
-          background:
-            "radial-gradient(ellipse 60% 40% at 50% 40%, hsla(185,100%,50%,0.06) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 30% 60%, hsla(325,90%,55%,0.04) 0%, transparent 70%)",
-        }}
-      />
+      {/* Background image */}
+      <div className="absolute inset-0 z-0">
+        <img
+          src={heroBg}
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/60" />
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 60% 40% at 50% 40%, hsla(185,100%,50%,0.08) 0%, transparent 70%), radial-gradient(ellipse 40% 30% at 30% 60%, hsla(325,90%,55%,0.05) 0%, transparent 70%)",
+          }}
+        />
+      </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
         <motion.p
