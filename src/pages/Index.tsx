@@ -2,7 +2,9 @@ import FloatingShapes from "@/components/FloatingShapes";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import SinglesSection from "@/components/SinglesSection";
+import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const Index = () => {
   return (
@@ -12,8 +14,10 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <SinglesSection />
+        <ContactSection />
         <Footer />
       </main>
+      <ScrollToTop />
     </div>
   );
 };
