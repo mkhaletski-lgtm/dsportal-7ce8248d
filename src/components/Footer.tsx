@@ -36,8 +36,17 @@ const Footer = () => {
           ))}
         </div>
 
-        <p className="text-xs text-muted-foreground/50 font-body">
-          © {new Date().getFullYear()} DREAMSYNT. Все права защищены.
+        <p className="text-xs text-muted-foreground/50 font-body leading-relaxed max-w-2xl mx-auto">
+          © 2026 DREAMSYNT. Все права защищены.
+          <br />
+          Все музыкальные произведения, фонограммы, тексты и визуальные материалы проекта охраняются законодательством РФ об авторском праве и смежных правах, а также международными договорами. Любое копирование, распространение, публичное исполнение, размещение на сторонних ресурсах или использование в любых целях без предварительного письменного согласия правообладателя запрещено. Для получения лицензии:{" "}
+          <a
+            href="mailto:dreamsynt.ru@gmail.com"
+            className="text-primary/70 hover:text-primary transition-colors underline"
+          >
+            написать на e-mail
+          </a>
+          .
         </p>
       </div>
     </footer>
