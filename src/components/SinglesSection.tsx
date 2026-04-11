@@ -21,15 +21,15 @@ const singles: Single[] = [
 
 const SingleCard = ({ single, index }: { single: Single; index: number }) => (
   <motion.div
-    className="glass-panel p-3 sm:p-4 flex flex-col items-center gap-3"
+    className="glass-panel p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
     initial={{ opacity: 0, y: 30 }}
     whileInView={{ opacity: 1, y: 0 }}
     viewport={{ once: true, margin: "-50px" }}
     transition={{ duration: 0.5, delay: index * 0.1 }}
-    whileHover={{ scale: 1.03 }}
+    whileHover={{ scale: 1.02 }}
   >
     <motion.div
-      className="w-36 h-36 sm:w-44 sm:h-44 rounded-xl overflow-hidden relative"
+      className="w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden relative flex-shrink-0"
       style={{
         boxShadow:
           "0 0 20px hsla(185,100%,50%,0.12), 0 0 40px hsla(325,90%,55%,0.06)",
@@ -40,21 +40,23 @@ const SingleCard = ({ single, index }: { single: Single; index: number }) => (
       <img src={single.cover} alt={single.title} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
     </motion.div>
-    <h4 className="text-sm sm:text-base font-display font-semibold text-foreground text-center">
-      {single.title}
-    </h4>
-    <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
-      Слушать
-    </a>
+    <div className="flex flex-col items-center sm:items-start gap-3">
+      <h4 className="text-lg sm:text-xl font-display font-semibold text-foreground text-center sm:text-left">
+        {single.title}
+      </h4>
+      <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
+        Слушать
+      </a>
+    </div>
   </motion.div>
 );
 
 const SinglesSection = () => {
   return (
     <section id="singles" className="relative py-24 sm:py-32 px-4">
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-4xl mx-auto">
         <motion.h2
-          className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16 text-gradient-hero"
+          className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-4 text-gradient-hero"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -62,6 +64,16 @@ const SinglesSection = () => {
         >
           Альбом «Выше правил»
         </motion.h2>
+
+        <motion.p
+          className="text-center text-muted-foreground text-sm md:text-base tracking-[0.2em] uppercase mb-16 font-body"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.7, delay: 0.2 }}
+        >
+          Дата релиза: май 2026 года
+        </motion.p>
 
         {/* Album cover */}
         <motion.div
@@ -89,7 +101,7 @@ const SinglesSection = () => {
           </motion.div>
         </motion.div>
 
-        {/* Singles grid */}
+        {/* Singles list */}
         <motion.h3
           className="text-xl sm:text-2xl font-display font-semibold text-center mb-8 text-muted-foreground"
           initial={{ opacity: 0 }}
@@ -99,7 +111,7 @@ const SinglesSection = () => {
           Синглы
         </motion.h3>
 
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4 sm:gap-6">
+        <div className="flex flex-col gap-4 sm:gap-6">
           {singles.map((single, i) => (
             <SingleCard key={single.title} single={single} index={i} />
           ))}
