@@ -10,6 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background">
+      <Navbar />
       <FloatingShapes />
       <main className="relative z-10">
         <HeroSection />
