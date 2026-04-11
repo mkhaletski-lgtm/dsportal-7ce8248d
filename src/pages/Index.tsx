@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import FloatingShapes from "@/components/FloatingShapes";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
