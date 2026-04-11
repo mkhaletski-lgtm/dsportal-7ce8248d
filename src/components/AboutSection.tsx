@@ -3,7 +3,7 @@ import artistPhoto from "@/assets/artist-photo.png";
 
 const AboutSection = () => {
   return (
-    <section className="relative py-24 sm:py-32 px-4">
+    <section id="about" className="relative py-24 sm:py-32 px-4">
       <div className="max-w-6xl mx-auto flex flex-col lg:flex-row items-center gap-12">
         {/* Text */}
         <div className="flex-1">

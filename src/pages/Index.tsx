@@ -1,3 +1,4 @@
+import Navbar from "@/components/Navbar";
 import FloatingShapes from "@/components/FloatingShapes";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
@@ -9,6 +10,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 const Index = () => {
   return (
     <div className="relative min-h-screen bg-background">
+      <Navbar />
       <FloatingShapes />
       <main className="relative z-10">
         <HeroSection />
