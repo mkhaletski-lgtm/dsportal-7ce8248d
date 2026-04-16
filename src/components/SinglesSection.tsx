@@ -5,18 +5,30 @@ import coverGrustnaya from "@/assets/cover-grustnaya-istoriya.jpg";
 import coverKogdaGlaza from "@/assets/cover-kogda-glaza.jpg";
 import coverPokaGorit from "@/assets/cover-poka-gorit-okno.jpg";
 import coverHolodny from "@/assets/cover-holodny-svet.jpg";
+import coverZachemMolchat from "@/assets/cover-zachem-molchat.jpg";
+import coverNaOdnoyVolne from "@/assets/cover-na-odnoy-volne.jpg";
+import coverNemoyFinal from "@/assets/cover-nemoy-final.jpg";
+import coverNochnoyReys from "@/assets/cover-nochnoy-reys.jpg";
+import coverYaBuduZhivym from "@/assets/cover-ya-budu-zhivym.jpg";
 
 interface Single {
   title: string;
   cover: string;
+  alt: string;
+  description: string;
 }
 
 const singles: Single[] = [
-  { title: "Выше правил", cover: coverVyshePravil },
-  { title: "Грустная история", cover: coverGrustnaya },
-  { title: "Когда глаза говорят", cover: coverKogdaGlaza },
-  { title: "Пока горит окно", cover: coverPokaGorit },
-  { title: "Холодный свет", cover: coverHolodny },
+  { title: "Выше правил", cover: coverVyshePravil, alt: "DREAMSYNT- Выше правил", description: "Modern Russian Dance-Pop, Emotional Synthwave, Cinematic, 125 BPM" },
+  { title: "Грустная история", cover: coverGrustnaya, alt: "DREAMSYNT- Грустная история", description: "Cinematic Synthwave Ballad, Slow Electronic Pop, 75 BPM" },
+  { title: "Когда глаза говорят", cover: coverKogdaGlaza, alt: "DREAMSYNT- Когда глаза говорят", description: "Modern Russian Dance-Pop, Cinematic Synthwave, 122 BPM" },
+  { title: "Пока горит окно", cover: coverPokaGorit, alt: "DREAMSYNT- Пока горит окно", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 120 BPM" },
+  { title: "Холодный свет", cover: coverHolodny, alt: "DREAMSYNT- Холодный свет", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 100 BPM" },
+  { title: "Зачем молчать", cover: coverZachemMolchat, alt: "DREAMSYNT- Зачем молчать", description: "Cinematic Ambient Ballad, 75 BPM" },
+  { title: "На одной волне", cover: coverNaOdnoyVolne, alt: "DREAMSYNT- На одной волне", description: "Club Dance-Pop, 125 BPM" },
+  { title: "Немой финал", cover: coverNemoyFinal, alt: "DREAMSYNT- Немой финал", description: "Emotional Cinematic Ballad, 85 BPM" },
+  { title: "Ночной рейс", cover: coverNochnoyReys, alt: "DREAMSYNT- Ночной рейс", description: "Modern Russian Dance-Pop, Emotional Synthwave, 100 BPM" },
+  { title: "Я буду живым", cover: coverYaBuduZhivym, alt: "DREAMSYNT- Я буду живым", description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM" },
 ];
 
 const SingleCard = ({ single, index }: { single: Single; index: number }) => (
@@ -37,16 +49,24 @@ const SingleCard = ({ single, index }: { single: Single; index: number }) => (
       }}
       whileHover={{ rotateY: 8, rotateX: -4, scale: 1.03 }}
     >
-      <img src={single.cover} alt={single.title} className="w-full h-full object-cover" />
+      <img src={single.cover} alt={single.alt} className="w-full h-full object-cover" />
       <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
     </motion.div>
     <div className="flex flex-col items-center sm:items-start gap-3">
       <h4 className="text-lg sm:text-xl font-display font-semibold text-foreground text-center sm:text-left">
         {single.title}
       </h4>
-      <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
-        Слушать
-      </a>
+      <p className="text-xs sm:text-sm text-muted-foreground font-body text-center sm:text-left">
+        {single.description}
+      </p>
+      <div className="flex gap-3">
+        <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
+          Слушать
+        </a>
+        <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
+          Скачать
+        </a>
+      </div>
     </div>
   </motion.div>
 );
@@ -72,7 +92,7 @@ const SinglesSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.7, delay: 0.2 }}
         >
-          Дата релиза: май 2026 года
+          Дата релиза: 21 апреля 2026 года
         </motion.p>
 
         {/* Album cover */}
@@ -94,7 +114,7 @@ const SinglesSection = () => {
           >
             <img
               src={albumCover}
-              alt="Альбом Выше правил"
+              alt="Альбом DREAMSYNT- Выше правил"
               className="w-full h-full object-cover rounded-xl"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent rounded-xl" />
