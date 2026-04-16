@@ -63,7 +63,7 @@ const SingleCard = ({ single, index }: { single: Single; index: number }) => (
         <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
           Слушать
         </a>
-        <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
+        <a href="#" className="neon-glow-btn-magenta inline-block text-xs sm:text-sm">
           Скачать
         </a>
       </div>
