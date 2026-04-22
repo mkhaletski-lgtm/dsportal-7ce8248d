@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Download, Music2 } from "lucide-react";
 import albumCover from "@/assets/cover-vyshe-pravil.jpg";
 import coverVyshePravil from "@/assets/cover-vyshe-pravil.jpg";
 import coverGrustnaya from "@/assets/cover-grustnaya-istoriya.jpg";
@@ -11,15 +12,37 @@ import coverNemoyFinal from "@/assets/cover-nemoy-final.jpg";
 import coverNochnoyReys from "@/assets/cover-nochnoy-reys.jpg";
 import coverYaBuduZhivym from "@/assets/cover-ya-budu-zhivym.jpg";
 
+interface SingleLinks {
+  yandex?: string;
+  vk?: string;
+  spotify?: string;
+  download?: string;
+}
+
 interface Single {
   title: string;
   cover: string;
   alt: string;
   description: string;
+  extendedDescription?: string;
+  links?: SingleLinks;
 }
 
 const singles: Single[] = [
-  { title: "Выше правил", cover: coverVyshePravil, alt: "DREAMSYNT- Выше правил", description: "Modern Russian Dance-Pop, Emotional Synthwave, Cinematic, 125 BPM" },
+  {
+    title: "Выше правил",
+    cover: coverVyshePravil,
+    alt: "DREAMSYNT - Выше правил",
+    description: "Modern Russian Dance-Pop, Emotional Synthwave, Cinematic, 125 BPM",
+    extendedDescription:
+      "Это не просто танцевальный трек — это кинематографичный синтвейв-драйв, где каждый удар баса работает как импульс свободы. 125 BPM и неоновые синтезаторы создают звук, который не отпускает с первого прослушивания.\n\nВключай, если сегодня чувствуешь: правила созданы, чтобы их ломать. А любовь и успех — это одна дорога.",
+    links: {
+      yandex: "https://clck.ru/3TE4Cc",
+      vk: "https://clck.ru/3TE4Ft",
+      spotify: "https://clck.ru/3TE4Hq",
+      download: "https://clck.ru/3TE4T8",
+    },
+  },
   { title: "Грустная история", cover: coverGrustnaya, alt: "DREAMSYNT- Грустная история", description: "Cinematic Synthwave Ballad, Slow Electronic Pop, 75 BPM" },
   { title: "Когда глаза говорят", cover: coverKogdaGlaza, alt: "DREAMSYNT- Когда глаза говорят", description: "Modern Russian Dance-Pop, Cinematic Synthwave, 122 BPM" },
   { title: "Пока горит окно", cover: coverPokaGorit, alt: "DREAMSYNT- Пока горит окно", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 120 BPM" },
@@ -31,45 +54,102 @@ const singles: Single[] = [
   { title: "Я буду живым", cover: coverYaBuduZhivym, alt: "DREAMSYNT- Я буду живым", description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM" },
 ];
 
-const SingleCard = ({ single, index }: { single: Single; index: number }) => (
-  <motion.div
-    className="glass-panel p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
-    initial={{ opacity: 0, y: 30 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    viewport={{ once: true, margin: "-50px" }}
-    transition={{ duration: 0.5, delay: index * 0.1 }}
-    whileHover={{ scale: 1.02 }}
-  >
-    <motion.div
-      className="w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden relative flex-shrink-0"
-      style={{
-        boxShadow:
-          "0 0 20px hsla(185,100%,50%,0.12), 0 0 40px hsla(325,90%,55%,0.06)",
-        perspective: 800,
-      }}
-      whileHover={{ rotateY: 8, rotateX: -4, scale: 1.03 }}
-    >
-      <img src={single.cover} alt={single.alt} className="w-full h-full object-cover" />
-      <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
-    </motion.div>
-    <div className="flex flex-col items-center sm:items-start gap-3">
-      <h4 className="text-lg sm:text-xl font-display font-semibold text-foreground text-center sm:text-left">
-        {single.title}
-      </h4>
-      <p className="text-xs sm:text-sm text-muted-foreground font-body text-center sm:text-left">
-        {single.description}
-      </p>
-      <div className="flex gap-3">
-        <a href="#" className="neon-glow-btn inline-block text-xs sm:text-sm">
-          Слушать
-        </a>
-        <a href="#" className="neon-glow-btn-magenta inline-block text-xs sm:text-sm">
-          Скачать
-        </a>
-      </div>
-    </div>
-  </motion.div>
+// Inline brand-style icons (monochrome, currentColor)
+const YandexMusicIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1.6 5.2h1.7v9.6h-1.7V11l-3.5 5.8H8.4V7.2h1.7v5.8l3.5-5.8z" />
+  </svg>
 );
+
+const VkMusicIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M2.4 4.8h7.2A4.8 4.8 0 0 1 14.4 9.6v9.6H7.2A4.8 4.8 0 0 1 2.4 14.4V4.8zm14.4 0h4.8v9.6a4.8 4.8 0 0 1-4.8 4.8h-.6V9.6a4.8 4.8 0 0 0-1.5-3.5 4.8 4.8 0 0 1 2.1-1.3z" />
+  </svg>
+);
+
+const SpotifyIcon = ({ className = "" }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
+    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.7.7 0 0 1-.95.23c-2.6-1.59-5.88-1.95-9.74-1.07a.7.7 0 0 1-.31-1.36c4.22-.96 7.85-.55 10.77 1.24a.7.7 0 0 1 .23.96zm1.23-2.74a.87.87 0 0 1-1.2.29c-2.98-1.83-7.52-2.36-11.04-1.29a.87.87 0 1 1-.5-1.66c4.02-1.22 9.02-.62 12.45 1.47a.87.87 0 0 1 .29 1.19zm.1-2.85c-3.57-2.12-9.46-2.32-12.86-1.28a1.04 1.04 0 1 1-.6-2 18.5 18.5 0 0 1 14.54 1.49 1.04 1.04 0 1 1-1.07 1.79z" />
+  </svg>
+);
+
+const SingleCard = ({ single, index }: { single: Single; index: number }) => {
+  const links = single.links ?? {};
+  return (
+    <motion.div
+      className="glass-panel p-4 sm:p-6 flex flex-col sm:flex-row items-center gap-4 sm:gap-6"
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ scale: 1.02 }}
+    >
+      <motion.div
+        className="w-40 h-40 sm:w-48 sm:h-48 rounded-xl overflow-hidden relative flex-shrink-0"
+        style={{
+          boxShadow:
+            "0 0 20px hsla(185,100%,50%,0.12), 0 0 40px hsla(325,90%,55%,0.06)",
+          perspective: 800,
+        }}
+        whileHover={{ rotateY: 8, rotateX: -4, scale: 1.03 }}
+      >
+        <img src={single.cover} alt={single.alt} className="w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-gradient-to-t from-background/40 to-transparent" />
+      </motion.div>
+      <div className="flex flex-col items-center sm:items-start gap-3 flex-1">
+        <h4 className="text-lg sm:text-xl font-display font-semibold text-foreground text-center sm:text-left">
+          {single.title}
+        </h4>
+        <p className="text-xs sm:text-sm text-muted-foreground font-body text-center sm:text-left">
+          {single.description}
+        </p>
+        {single.extendedDescription && (
+          <p className="text-xs sm:text-sm text-foreground/80 font-body text-center sm:text-left whitespace-pre-line">
+            {single.extendedDescription}
+          </p>
+        )}
+        <div className="flex flex-wrap justify-center sm:justify-start gap-2 sm:gap-3 pt-1">
+          <a
+            href={links.yandex ?? "#"}
+            target={links.yandex ? "_blank" : undefined}
+            rel={links.yandex ? "noopener noreferrer" : undefined}
+            className="neon-glow-btn inline-flex items-center gap-2 text-xs sm:text-sm"
+          >
+            <YandexMusicIcon className="w-4 h-4" />
+            <span>Слушать Яндекс Музыка</span>
+          </a>
+          <a
+            href={links.vk ?? "#"}
+            target={links.vk ? "_blank" : undefined}
+            rel={links.vk ? "noopener noreferrer" : undefined}
+            className="neon-glow-btn inline-flex items-center gap-2 text-xs sm:text-sm"
+          >
+            <VkMusicIcon className="w-4 h-4" />
+            <span>Слушать ВКонтакте</span>
+          </a>
+          <a
+            href={links.spotify ?? "#"}
+            target={links.spotify ? "_blank" : undefined}
+            rel={links.spotify ? "noopener noreferrer" : undefined}
+            className="neon-glow-btn inline-flex items-center gap-2 text-xs sm:text-sm"
+          >
+            <SpotifyIcon className="w-4 h-4" />
+            <span>Слушать Spotify</span>
+          </a>
+          <a
+            href={links.download ?? "#"}
+            target={links.download ? "_blank" : undefined}
+            rel={links.download ? "noopener noreferrer" : undefined}
+            className="neon-glow-btn-magenta inline-flex items-center gap-2 text-xs sm:text-sm"
+          >
+            <Download className="w-4 h-4" />
+            <span>Скачать</span>
+          </a>
+        </div>
+      </div>
+    </motion.div>
+  );
+};
 
 const SinglesSection = () => {
   return (
