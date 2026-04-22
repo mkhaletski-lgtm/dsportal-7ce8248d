@@ -11,6 +11,8 @@ import coverNaOdnoyVolne from "@/assets/cover-na-odnoy-volne.jpg";
 import coverNemoyFinal from "@/assets/cover-nemoy-final.jpg";
 import coverNochnoyReys from "@/assets/cover-nochnoy-reys.jpg";
 import coverYaBuduZhivym from "@/assets/cover-ya-budu-zhivym.jpg";
+import iconYandexMusic from "@/assets/icon-yandex-music.png";
+import iconVkMusic from "@/assets/icon-vk-music.png";
 
 interface SingleLinks {
   yandex?: string;
@@ -54,17 +56,13 @@ const singles: Single[] = [
   { title: "Я буду живым", cover: coverYaBuduZhivym, alt: "DREAMSYNT- Я буду живым", description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM" },
 ];
 
-// Inline brand-style icons (monochrome, currentColor)
+// Brand icons from uploaded image assets
 const YandexMusicIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
-    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1.6 5.2h1.7v9.6h-1.7V11l-3.5 5.8H8.4V7.2h1.7v5.8l3.5-5.8z" />
-  </svg>
+  <img src={iconYandexMusic} alt="" aria-hidden="true" className={className} />
 );
 
 const VkMusicIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
-    <path d="M2.4 4.8h7.2A4.8 4.8 0 0 1 14.4 9.6v9.6H7.2A4.8 4.8 0 0 1 2.4 14.4V4.8zm14.4 0h4.8v9.6a4.8 4.8 0 0 1-4.8 4.8h-.6V9.6a4.8 4.8 0 0 0-1.5-3.5 4.8 4.8 0 0 1 2.1-1.3z" />
-  </svg>
+  <img src={iconVkMusic} alt="" aria-hidden="true" className={className} />
 );
 
 const SpotifyIcon = ({ className = "" }: { className?: string }) => (
