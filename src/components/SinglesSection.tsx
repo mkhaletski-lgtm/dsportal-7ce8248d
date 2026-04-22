@@ -13,6 +13,7 @@ import coverNochnoyReys from "@/assets/cover-nochnoy-reys.jpg";
 import coverYaBuduZhivym from "@/assets/cover-ya-budu-zhivym.jpg";
 import iconYandexMusic from "@/assets/icon-yandex-music.png";
 import iconVkMusic from "@/assets/icon-vk-music.png";
+import iconSpotify from "@/assets/icon-spotify.png";
 
 interface SingleLinks {
   yandex?: string;
@@ -66,9 +67,7 @@ const VkMusicIcon = ({ className = "" }: { className?: string }) => (
 );
 
 const SpotifyIcon = ({ className = "" }: { className?: string }) => (
-  <svg viewBox="0 0 24 24" className={className} fill="currentColor" aria-hidden="true">
-    <path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm4.6 14.4a.7.7 0 0 1-.95.23c-2.6-1.59-5.88-1.95-9.74-1.07a.7.7 0 0 1-.31-1.36c4.22-.96 7.85-.55 10.77 1.24a.7.7 0 0 1 .23.96zm1.23-2.74a.87.87 0 0 1-1.2.29c-2.98-1.83-7.52-2.36-11.04-1.29a.87.87 0 1 1-.5-1.66c4.02-1.22 9.02-.62 12.45 1.47a.87.87 0 0 1 .29 1.19zm.1-2.85c-3.57-2.12-9.46-2.32-12.86-1.28a1.04 1.04 0 1 1-.6-2 18.5 18.5 0 0 1 14.54 1.49 1.04 1.04 0 1 1-1.07 1.79z" />
-  </svg>
+  <img src={iconSpotify} alt="" aria-hidden="true" className={className} />
 );
 
 const SingleCard = ({ single, index }: { single: Single; index: number }) => {
