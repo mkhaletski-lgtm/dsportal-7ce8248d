@@ -46,11 +46,50 @@ const singles: Single[] = [
       download: "https://clck.ru/3TE4T8",
     },
   },
-  { title: "Грустная история", cover: coverGrustnaya, alt: "DREAMSYNT- Грустная история", description: "Cinematic Synthwave Ballad, Slow Electronic Pop, 75 BPM" },
-  { title: "Когда глаза говорят", cover: coverKogdaGlaza, alt: "DREAMSYNT- Когда глаза говорят", description: "Modern Russian Dance-Pop, Cinematic Synthwave, 122 BPM" },
+  {
+    title: "Грустная история",
+    cover: coverGrustnaya,
+    alt: "DREAMSYNT - Грустная история",
+    description: "Cinematic Synthwave Ballad, Slow Electronic Pop, 75 BPM",
+    extendedDescription:
+      "Это не просто трек, а кинематографичная синтвейв-баллада на 75 BPM, где каждый удар минималистичного бита и каждая нота гитары звучат как отзвук прожитых лет.\n\nЭмоциональная вокальная подача рассказывает о моменте, когда пора отпустить, простить и пойти своей дорогой.\n\nВключай, если сегодня чувствуешь: иногда честное «довольно» звучит громче любых обещаний.",
+    links: {
+      yandex: "https://clck.ru/3TFwrm",
+      vk: "https://clck.ru/3TFwtG",
+      spotify: "https://clck.ru/3TFwvL",
+      download: "https://clck.ru/3TFwxi",
+    },
+  },
+  {
+    title: "Когда глаза говорят",
+    cover: coverKogdaGlaza,
+    alt: "DREAMSYNT - Когда глаза говорят",
+    description: "Modern Russian Dance-Pop, Cinematic Synthwave, 122 BPM",
+    extendedDescription:
+      "Это кинематографичный dance-pop на 122 BPM, где энергичный ритм встречается с тихой магией близости.\n\nЧёткая перкуссия, атмосферные синтезаторы и гитара создают звук, который звучит как разговор без слов. Честная эмоциональная подача ведёт туда, где не нужно объясняться — достаточно просто быть рядом.\n\nВключай, если сегодня чувствуешь: самое громкое признание часто звучит в тишине.",
+    links: {
+      yandex: "https://clck.ru/3TFxFw",
+      vk: "https://clck.ru/3TFxHP",
+      spotify: "https://clck.ru/3TFxKP",
+      download: "https://clck.ru/3TFxMw",
+    },
+  },
   { title: "Пока горит окно", cover: coverPokaGorit, alt: "DREAMSYNT- Пока горит окно", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 120 BPM" },
   { title: "Холодный свет", cover: coverHolodny, alt: "DREAMSYNT- Холодный свет", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 100 BPM" },
-  { title: "Зачем молчать", cover: coverZachemMolchat, alt: "DREAMSYNT- Зачем молчать", description: "Cinematic Ambient Ballad, 75 BPM" },
+  {
+    title: "Зачем молчать",
+    cover: coverZachemMolchat,
+    alt: "DREAMSYNT - Зачем молчать",
+    description: "Cinematic Ambient Ballad, 75 BPM",
+    extendedDescription:
+      "Это кинематографичная эмбиент-баллада на 75 BPM, где каждый удар минималистичного бита, каждая нота струнных и каждая капля гранулярного синтеза звучат как тихий разговор после долгого молчания. Эмоциональная вокальная подача и атмосферный продакшен создают звук, который обнимает в пасмурный вечер.\n\nВключай, если сегодня чувствуешь: иногда одно честное «давай начнём сначала» важнее тысячи невысказанных слов.",
+    links: {
+      yandex: "https://clck.ru/3TFxYz",
+      vk: "https://clck.ru/3TFxHP".replace("3TFxHP","3TFxbF"),
+      spotify: "https://clck.ru/3TFxcz",
+      download: "https://clck.ru/3TFxer",
+    },
+  },
   { title: "На одной волне", cover: coverNaOdnoyVolne, alt: "DREAMSYNT- На одной волне", description: "Club Dance-Pop, 125 BPM" },
   { title: "Немой финал", cover: coverNemoyFinal, alt: "DREAMSYNT- Немой финал", description: "Emotional Cinematic Ballad, 85 BPM" },
   { title: "Ночной рейс", cover: coverNochnoyReys, alt: "DREAMSYNT- Ночной рейс", description: "Modern Russian Dance-Pop, Emotional Synthwave, 100 BPM" },
