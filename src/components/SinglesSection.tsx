@@ -74,8 +74,34 @@ const singles: Single[] = [
       download: "https://clck.ru/3TFxMw",
     },
   },
-  { title: "Пока горит окно", cover: coverPokaGorit, alt: "DREAMSYNT- Пока горит окно", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 120 BPM" },
-  { title: "Холодный свет", cover: coverHolodny, alt: "DREAMSYNT- Холодный свет", description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 100 BPM" },
+  {
+    title: "Пока горит окно",
+    cover: coverPokaGorit,
+    alt: "DREAMSYNT - Пока горит окно",
+    description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 120 BPM",
+    extendedDescription:
+      "Это кинематографичная эмоциональная баллада на 120 BPM, где современная поп-эстетика переплетается с атмосферой тихого вечера и искренней близости. Минималистичный ритм, воздушные синтезаторы и чистая гитара в пространстве реверберации создают звук, который звучит как разговор в темноте.\n\nЭмоциональная подача и динамичная аранжировка превращают историю момента в саундтрек для тех, кто ценит «здесь и сейчас».\n\nВключай, если сегодня чувствуешь: иногда самое важное — просто оставить свет включённым и не отпускать руку.",
+    links: {
+      yandex: "https://clck.ru/3TMFft",
+      vk: "https://clck.ru/3TMFiR",
+      spotify: "https://clck.ru/3TMFm5",
+      download: "https://clck.ru/3TMFoT",
+    },
+  },
+  {
+    title: "Холодный свет",
+    cover: coverHolodny,
+    alt: "DREAMSYNT - Холодный свет",
+    description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 100 BPM",
+    extendedDescription:
+      "Это кинематографичная эмоциональная баллада на 100 BPM, где современный поп-ритм переплетается с атмосферой ночного города и тихой внутренней борьбой.\n\nМинималистичная перкуссия, атмосферные текстуры и чистая гитара в пространстве реверберации создают звук, который звучит как откровенный монолог в салоне автомобиля на пустой трассе. Мелодика и динамичная подача превращают историю о блеске и пустоте в саундтрек для тех, кто знает: успех не заменяет тепло рядом.\n\nВключай, если сегодня чувствуешь: иногда самый громкий вопрос остаётся без ответа, пока ты не остановишься.",
+    links: {
+      yandex: "https://clck.ru/3TMG3F",
+      vk: "https://clck.ru/3TMG5Z",
+      spotify: "https://clck.ru/3TMG7f",
+      download: "https://clck.ru/3TMG9f",
+    },
+  },
   {
     title: "Зачем молчать",
     cover: coverZachemMolchat,
@@ -90,7 +116,20 @@ const singles: Single[] = [
       download: "https://clck.ru/3TFxer",
     },
   },
-  { title: "На одной волне", cover: coverNaOdnoyVolne, alt: "DREAMSYNT- На одной волне", description: "Club Dance-Pop, 125 BPM" },
+  {
+    title: "На одной волне",
+    cover: coverNaOdnoyVolne,
+    alt: "DREAMSYNT - На одной волне",
+    description: "Club Dance-Pop, 125 BPM",
+    extendedDescription:
+      "Это кинематографичный dance-pop на 125 BPM, где клубная энергия встречается с балеарской свободой. Яркие синтезаторные линии, чёткий ритм и пульсирующий грув создают звук, который мгновенно переносит на побережье под звёздным небом.\n\nЭмоциональная подача и летняя атмосфера делают этот трек саундтреком для моментов, когда хочется просто отпустить городскую суету и поймать свой ритм.\n\nВключай, если сегодня чувствуешь: лето — это не сезон, а состояние души.",
+    links: {
+      yandex: "https://clck.ru/3TMGNv",
+      vk: "https://clck.ru/3TMGR9",
+      spotify: "https://clck.ru/3TMGTg",
+      download: "https://clck.ru/3TMGVi",
+    },
+  },
   { title: "Немой финал", cover: coverNemoyFinal, alt: "DREAMSYNT- Немой финал", description: "Emotional Cinematic Ballad, 85 BPM" },
   { title: "Ночной рейс", cover: coverNochnoyReys, alt: "DREAMSYNT- Ночной рейс", description: "Modern Russian Dance-Pop, Emotional Synthwave, 100 BPM" },
   { title: "Я буду живым", cover: coverYaBuduZhivym, alt: "DREAMSYNT- Я буду живым", description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM" },
