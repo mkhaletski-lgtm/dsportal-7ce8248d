@@ -1,4 +1,13 @@
 import { motion } from "framer-motion";
+import iconYandexMusic from "@/assets/icon-yandex-music.png";
+import iconVkMusic from "@/assets/icon-vk-music.png";
+import iconSpotify from "@/assets/icon-spotify.png";
+
+const socials = [
+  { label: "Яндекс музыка", href: "https://clck.ru/3TRxDN", icon: iconYandexMusic },
+  { label: "Spotify", href: "https://clck.ru/3TRxFE", icon: iconSpotify },
+  { label: "VK", href: "https://clck.ru/3TRxGo", icon: iconVkMusic },
+];
 
 const Footer = () => {
   return (
@@ -24,14 +33,17 @@ const Footer = () => {
           AI-Powered Music · Electronic Pop · Synthwave
         </p>
 
-        <div className="glass-panel inline-flex gap-6 px-6 py-3 mb-8">
-          {["YouTube", "Spotify", "VK"].map((platform) => (
+        <div className="glass-panel inline-flex flex-wrap justify-center gap-6 px-6 py-3 mb-8">
+          {socials.map((s) => (
             <a
-              key={platform}
-              href="#"
-              className="text-sm text-muted-foreground hover:text-primary transition-colors font-body"
+              key={s.label}
+              href={s.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors font-body"
             >
-              {platform}
+              <img src={s.icon} alt="" aria-hidden="true" className="w-4 h-4" />
+              <span>{s.label}</span>
             </a>
           ))}
         </div>
