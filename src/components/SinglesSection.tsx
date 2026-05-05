@@ -130,9 +130,48 @@ const singles: Single[] = [
       download: "https://clck.ru/3TMGVi",
     },
   },
-  { title: "Немой финал", cover: coverNemoyFinal, alt: "DREAMSYNT- Немой финал", description: "Emotional Cinematic Ballad, 85 BPM" },
-  { title: "Ночной рейс", cover: coverNochnoyReys, alt: "DREAMSYNT- Ночной рейс", description: "Modern Russian Dance-Pop, Emotional Synthwave, 100 BPM" },
-  { title: "Я буду живым", cover: coverYaBuduZhivym, alt: "DREAMSYNT- Я буду живым", description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM" },
+  {
+    title: "Немой финал",
+    cover: coverNemoyFinal,
+    alt: "DREAMSYNT - Немой финал",
+    description: "Emotional Cinematic Ballad, 85 BPM",
+    extendedDescription:
+      "Кинематографичная баллада на 90 BPM, где фортепианная мелодия и оркестровые струнные создают пространство тихого прощания.\n\nПросторная атмосфера, чистые гитарные аккорды и искренняя вокальная подача превращают историю расставания в кадр из фильма, где герои расстаются без криков, но с пониманием.\n\nВключай, если сегодня чувствуешь: иногда молчание говорит громче любых обещаний.",
+    links: {
+      yandex: "https://clck.ru/3TRvnc",
+      vk: "https://clck.ru/3TRvpB",
+      spotify: "https://clck.ru/3TRvrn",
+      download: "https://clck.ru/3TRvuQ",
+    },
+  },
+  {
+    title: "Ночной рейс",
+    cover: coverNochnoyReys,
+    alt: "DREAMSYNT - Ночной рейс",
+    description: "Modern Russian Dance-Pop, Emotional Synthwave, 100 BPM",
+    extendedDescription:
+      "Кинематографичный dance-pop на 100 BPM, где энергия ночного шоссе встречается с тихой силой саморефлексии.\n\nЧёткий ритм, атмосферные синтезаторы и чистая гитара в пространстве реверберации создают звук, который звучит как разговор с собой на ходу. Искренняя подача и продуманная аранжировка ведут туда, где не нужно никому ничего доказывать — достаточно просто быть в пути.\n\nВключай, если сегодня чувствуешь: иногда самый честный диалог происходит в тишине салона.",
+    links: {
+      yandex: "https://clck.ru/3TRw7N",
+      vk: "https://clck.ru/3TRw8X",
+      spotify: "https://clck.ru/3TRwAQ",
+      download: "https://clck.ru/3TRwCA",
+    },
+  },
+  {
+    title: "Я буду живым",
+    cover: coverYaBuduZhivym,
+    alt: "DREAMSYNT - Я буду живым",
+    description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM",
+    extendedDescription:
+      "Кинематографичный dance-pop на 120 BPM, где энергия ночного шоссе встречается с тихой силой внутреннего перерождения. Чёткий ритм, атмосферные синтезаторы и чистая гитара в пространстве реверберации создают звук, который звучит как первый глубокий вдох после долгого затишья.\n\nИскренняя подача и продуманная аранжировка ведут туда, где страхи остаются в прошлом, а впереди — только свет и движение.\n\nВключай, если сегодня чувствуешь: иногда самый честный шаг — это отпустить старое и выбрать себя.",
+    links: {
+      yandex: "https://clck.ru/3TRwM5",
+      vk: "https://clck.ru/3TRwNA",
+      spotify: "https://clck.ru/3TRwQi",
+      download: "https://clck.ru/3TRwT2",
+    },
+  },
 ];
 
 // Brand icons from uploaded image assets
