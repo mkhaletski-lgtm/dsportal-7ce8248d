@@ -22,7 +22,7 @@ const ContactSection = () => {
     "bg-transparent border-[hsla(325,90%,55%,0.4)] focus:border-[hsl(325,90%,55%)] focus-visible:ring-[hsla(325,90%,55%,0.5)] text-foreground placeholder:text-muted-foreground font-body transition-all duration-300 hover:border-[hsla(325,90%,55%,0.7)]";
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 px-4">
+    <section id="contact" className="relative pt-[4.2rem] sm:pt-[5.6rem] pb-24 sm:pb-32 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16 text-gradient-hero"
