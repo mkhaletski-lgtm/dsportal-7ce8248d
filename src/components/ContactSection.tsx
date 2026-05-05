@@ -7,22 +7,52 @@ import { useToast } from "@/hooks/use-toast";
 const ContactSection = () => {
   const { toast } = useToast();
   const [form, setForm] = useState({ name: "", phone: "", email: "", comment: "" });
+  const [submitting, setSubmitting] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!form.name || !form.phone || !form.email || !form.comment) {
       toast({ title: "Ошибка", description: "Заполните все обязательные поля", variant: "destructive" });
       return;
     }
-    toast({ title: "Отправлено!", description: "Мы свяжемся с вами в ближайшее время." });
-    setForm({ name: "", phone: "", email: "", comment: "" });
+
+    setSubmitting(true);
+    try {
+      const data = new FormData();
+      data.append("name", form.name);
+      data.append("phone", form.phone);
+      data.append("email", form.email);
+      data.append("comment", form.comment);
+      data.append("_subject", "Новое сообщение с сайта DREAMSYNT");
+      data.append("_captcha", "false");
+      data.append("_template", "table");
+
+      const res = await fetch("https://formsubmit.co/ajax/dreamsynt.ru@gmail.com", {
+        method: "POST",
+        headers: { Accept: "application/json" },
+        body: data,
+      });
+
+      if (!res.ok) throw new Error("Ошибка отправки");
+
+      toast({ title: "Отправлено!", description: "Мы свяжемся с вами в ближайшее время." });
+      setForm({ name: "", phone: "", email: "", comment: "" });
+    } catch (err) {
+      toast({
+        title: "Ошибка",
+        description: "Не удалось отправить сообщение. Попробуйте позже.",
+        variant: "destructive",
+      });
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   const inputClass =
     "bg-transparent border-[hsla(325,90%,55%,0.4)] focus:border-[hsl(325,90%,55%)] focus-visible:ring-[hsla(325,90%,55%,0.5)] text-foreground placeholder:text-muted-foreground font-body transition-all duration-300 hover:border-[hsla(325,90%,55%,0.7)]";
 
   return (
-    <section id="contact" className="relative py-24 sm:py-32 px-4">
+    <section id="contact" className="relative pt-[4.2rem] sm:pt-[5.6rem] pb-24 sm:pb-32 px-4">
       <div className="max-w-2xl mx-auto">
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-16 text-gradient-hero"
@@ -101,11 +131,12 @@ const ContactSection = () => {
 
           <motion.button
             type="submit"
-            className="neon-glow-btn-magenta mt-4 w-full text-center"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
+            disabled={submitting}
+            className="neon-glow-btn-magenta mt-4 w-full text-center disabled:opacity-60"
+            whileHover={{ scale: submitting ? 1 : 1.02 }}
+            whileTap={{ scale: submitting ? 1 : 0.98 }}
           >
-            Отправить сообщение
+            {submitting ? "Отправка..." : "Отправить сообщение"}
           </motion.button>
         </motion.form>
       </div>

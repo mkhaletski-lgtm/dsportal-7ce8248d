@@ -92,7 +92,7 @@ const singles: Single[] = [
     title: "Холодный свет",
     cover: coverHolodny,
     alt: "DREAMSYNT - Холодный свет",
-    description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 100 BPM",
+    description: "Modern Russian Pop, Dance-Pop, Emotional Trap Ballad, 80 BPM",
     extendedDescription:
       "Это кинематографичная эмоциональная баллада на 100 BPM, где современный поп-ритм переплетается с атмосферой ночного города и тихой внутренней борьбой.\n\nМинималистичная перкуссия, атмосферные текстуры и чистая гитара в пространстве реверберации создают звук, который звучит как откровенный монолог в салоне автомобиля на пустой трассе. Мелодика и динамичная подача превращают историю о блеске и пустоте в саундтрек для тех, кто знает: успех не заменяет тепло рядом.\n\nВключай, если сегодня чувствуешь: иногда самый громкий вопрос остаётся без ответа, пока ты не остановишься.",
     links: {
@@ -120,7 +120,7 @@ const singles: Single[] = [
     title: "На одной волне",
     cover: coverNaOdnoyVolne,
     alt: "DREAMSYNT - На одной волне",
-    description: "Club Dance-Pop, 125 BPM",
+    description: "Club Dance-Pop, 128 BPM",
     extendedDescription:
       "Это кинематографичный dance-pop на 125 BPM, где клубная энергия встречается с балеарской свободой. Яркие синтезаторные линии, чёткий ритм и пульсирующий грув создают звук, который мгновенно переносит на побережье под звёздным небом.\n\nЭмоциональная подача и летняя атмосфера делают этот трек саундтреком для моментов, когда хочется просто отпустить городскую суету и поймать свой ритм.\n\nВключай, если сегодня чувствуешь: лето — это не сезон, а состояние души.",
     links: {
@@ -134,7 +134,7 @@ const singles: Single[] = [
     title: "Немой финал",
     cover: coverNemoyFinal,
     alt: "DREAMSYNT - Немой финал",
-    description: "Emotional Cinematic Ballad, 85 BPM",
+    description: "Emotional Cinematic Ballad, 90 BPM",
     extendedDescription:
       "Кинематографичная баллада на 90 BPM, где фортепианная мелодия и оркестровые струнные создают пространство тихого прощания.\n\nПросторная атмосфера, чистые гитарные аккорды и искренняя вокальная подача превращают историю расставания в кадр из фильма, где герои расстаются без криков, но с пониманием.\n\nВключай, если сегодня чувствуешь: иногда молчание говорит громче любых обещаний.",
     links: {
@@ -162,7 +162,7 @@ const singles: Single[] = [
     title: "Я буду живым",
     cover: coverYaBuduZhivym,
     alt: "DREAMSYNT - Я буду живым",
-    description: "Modern Russian Dance-Pop, Emotional Synthwave, 120 BPM",
+    description: "Modern Russian Dance-Pop, Emotional Synthwave, 124 BPM",
     extendedDescription:
       "Кинематографичный dance-pop на 120 BPM, где энергия ночного шоссе встречается с тихой силой внутреннего перерождения. Чёткий ритм, атмосферные синтезаторы и чистая гитара в пространстве реверберации создают звук, который звучит как первый глубокий вдох после долгого затишья.\n\nИскренняя подача и продуманная аранжировка ведут туда, где страхи остаются в прошлом, а впереди — только свет и движение.\n\nВключай, если сегодня чувствуешь: иногда самый честный шаг — это отпустить старое и выбрать себя.",
     links: {
@@ -267,7 +267,7 @@ const SingleCard = ({ single, index }: { single: Single; index: number }) => {
 
 const SinglesSection = () => {
   return (
-    <section id="singles" className="relative py-24 sm:py-32 px-4">
+    <section id="singles" className="relative py-[4.2rem] sm:py-[5.6rem] px-4">
       <div className="max-w-4xl mx-auto">
         <motion.h2
           className="text-3xl sm:text-4xl md:text-5xl font-display font-bold text-center mb-4 text-gradient-hero"
