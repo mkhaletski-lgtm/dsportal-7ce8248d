@@ -1,17 +1,14 @@
-name: Build and Deploy to main
+name: Deploy Built Site to main
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
 
 jobs:
-  build-and-deploy:
+  deploy:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+      - uses: actions/checkout@v4
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -22,16 +19,19 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build site
         run: npm run build
 
-      - name: Copy dist to root (overwrite main)
+      - name: Replace main with dist contents
         run: |
-          rm -rf * !(dist)  # Удаляем всё, кроме папки dist
-          mv dist/* .         # Перемещаем содержимое dist в корень
-          rmdir dist          # Удаляем пустую папку dist
+          echo "Cleaning main branch..."
+          git rm -r --ignore-unmatch *
+          echo "Copying dist files..."
+          cp -r dist/* .
+          echo "Removing dist folder..."
+          rmdir dist
 
-      - name: Commit and push back to main
+      - name: Commit & push
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: "chore: deploy built site"
