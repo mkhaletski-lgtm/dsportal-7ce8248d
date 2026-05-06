@@ -1,43 +1,26 @@
 name: Deploy to Pages
-
 on:
   push:
-    branches: ['main']
-
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
-concurrency:
-  group: 'pages'
-  cancel-in-progress: true
-
+    branches: [ main ]
 jobs:
   deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
     steps:
-    - name: Checkout
-      uses: actions/checkout@v4
-    - name: Setup Node
-      uses: actions/setup-node@v4
+    - uses: actions/checkout@v4
+    - uses: actions/setup-node@v4
       with:
-        node-version: '20'
-        cache: 'npm'
-    - name: Install dependencies
-      run: npm ci
-    - name: Setup Pages
-      id: pages
+        node-version: 20
+        cache: npm
+    - run: npm ci
+    - id: pages
       uses: actions/configure-pages@v5
-    - name: Build with Vite
-      run: npm run build -- --base ${{ steps.pages.outputs.base_path }}
-    - name: Upload artifact
-      uses: actions/upload-pages-artifact@v3
+    - run: npm run build -- --base ${{ steps.pages.outputs.base_path }}
+    - uses: actions/upload-pages-artifact@v3
       with:
-        path: './dist'
-    - name: Deploy to GitHub Pages
-      id: deployment
+        path: ./dist
+    - id: deployment
       uses: actions/deploy-pages@v4
