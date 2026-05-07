@@ -33,12 +33,12 @@ const Navbar = () => {
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
     >
-      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between">
-        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>
-          <img src={logo} alt="DREAMSYNT" className="h-6 sm:h-7" />
+      <div className="max-w-6xl mx-auto px-4 flex items-center justify-between gap-4">
+        <a href="#" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }} className="shrink-0">
+          <img src={logo} alt="DREAMSYNT" className="h-5 sm:h-7" />
         </a>
 
-        <div className="flex items-center gap-6 sm:gap-8">
+        <div className="flex items-center gap-4 sm:gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
